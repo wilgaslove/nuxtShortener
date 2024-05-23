@@ -17,7 +17,7 @@
         <tr v-for="link in links" :key="link.id">
         <td><a :href="link.full_links" target="_blank"> {{ link.full_links }} </a></td>
         <td><a href="#"> {{ link.short_links }} </a></td>
-        <td><a > {{ link.vieuws }} </a></td>
+        <td><a href=""> {{ link.vieuws }} </a></td>
         <td><a > {{  }} </a></td>
         <td><a > {{  }} </a></td>
         <td><a > {{  }} </a></td>
