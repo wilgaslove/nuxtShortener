@@ -2,7 +2,8 @@
   <div class="mx-auto max-w-md prose">
 
     <h1>Modifier le lien</h1>
-    <a href="#" class="text-sm mb-5 italic felx items-center gap-3">
+    <a href="#" class="text-sm mb-5 italic felx items-center gap-3"
+    @click.prevent="useRouter().back()">
       <Icon name="mdi:arrow-left" />
       Retour
     </a>
