@@ -76,11 +76,13 @@ const links = [
 </script>
 
 <style scoped>
-th{
+th {
   @apply px-6 py-3;
 }
 
-th{
+td {
   @apply px-6 py-4;
 }
+
+
 </style>

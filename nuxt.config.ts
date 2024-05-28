@@ -7,5 +7,8 @@ export default defineNuxtConfig({
     public: {
       appUrl: process.env.APP_URL || "http://localhost:3000" 
     }
+  }, 
+  tailwindcss:{
+    configPath: "tailwind.config.ts"
   }
 })
