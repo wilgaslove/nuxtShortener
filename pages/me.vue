@@ -1,7 +1,7 @@
 <template>
   <div>
     <p><strong>Nom d'utilisateur:</strong>Wilgas</p>
-    <p><strong>Email:</strong>Wilgas216@gmail.com</p>
+    <p><strong>Email: </strong>Wilgas216@gmail.com</p>
   </div>
 </template>
 
