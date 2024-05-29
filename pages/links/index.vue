@@ -1,6 +1,16 @@
 <template>
   <div>
-    <h1>Mes liens</h1>
+    <nav class="flex justify-between items-center mb-4 prose">
+      <h1 class="mb-0">Mes liens</h1>
+      <!-- //<SearchInput :modelValue="search"/> -->
+      <!-- <SearchInput :model-value="search" @update:modelVlaue="$event => search = $event" /> -->
+
+        <SearchInput :model-value="search" />
+
+      <NuxtLink 
+      to="/links/create" class="no-underline px-4 py-2 text-white bg-gray-600 hover:bg-gray-800 rounded-md transition duration-300 ">
+      Créer un Lien</NuxtLink>
+    </nav>
 
     <table class="w-full border text-sm text-left text-gray-500">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50">
@@ -70,9 +80,9 @@ const links = [
     vieuws: 0,
     id: 3,
   },
-
-
 ]
+
+const search = ref("")
 </script>
 
 <style scoped>
