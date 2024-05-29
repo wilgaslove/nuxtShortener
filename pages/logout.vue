@@ -1,6 +1,6 @@
 <template>
   <div>
-    Log out 
+    Deconnexion ...
   </div>
 </template>
 
