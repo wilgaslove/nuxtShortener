@@ -6,7 +6,7 @@
     class="pl-10 p-2 rounded border"
   v-model="modelValue"
     />
-    <p>{{ modelValue }}</p>
+ 
   </div>
 </template>
 
@@ -19,7 +19,7 @@
 //  modelValue: string;
 // }>() //version typscript de ce qui est en haut.
 
-const modelValue = defineModel()
+const modelValue = defineModel() // on attend du parent une props nommées modelValue
 </script>
 
 <style>
