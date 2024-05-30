@@ -15,7 +15,7 @@
         <input type="password" v-model="form.password">
       </label>
       <label>
-       Confirmation Mot de passe
+        Confirmation Mot de passe
         <input type="password" v-model="form.password_confirmation">
       </label>
       <button type="submit" class="btn">S'inscrire'</button>
@@ -28,28 +28,29 @@
 </template>
 
 <script lang="ts" setup>
-  definePageMeta({
-    layout: "centered"
-  });
+import axios
+  from 'axios';
+definePageMeta({
+  layout: "centered"
+});
 
-  interface RegisterPayload {
-    name: string;
-    email: string;
-    password: string;
-    password_confirmation: string;
-  };
+interface RegisterPayload {
+  name: string;
+  email: string;
+  password: string;
+  password_confirmation: string;
+};
 
-  const form = ref<RegisterPayload>({
-    name: "",
-    email: "",
-    password: "",
-    password_confirmation: "",
-  });
+const form = ref<RegisterPayload>({
+  name: "",
+  email: "",
+  password: "",
+  password_confirmation: "",
+});
 
-  async function register(payload: RegisterPayload) {
-    alert('hello')
-    console.log({payload});
-  }
+async function register(payload: RegisterPayload) {
+  axios.get("/users")
+}
 </script>
 
 <style></style>
