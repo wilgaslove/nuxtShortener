@@ -21,15 +21,15 @@
       <button type="submit" class="btn">S'inscrire'</button>
     </form>
     <p>
-      Vous avez déjjà un compte ?
+      Vous avez déjà un compte ?
       <NuxtLink class="uderline text-lime-600" to="/login">connectez-vous!</NuxtLink>
     </p>
   </div>
 </template>
 
 <script lang="ts" setup>
-import axios
-  from 'axios';
+import axios from 'axios';
+
 definePageMeta({
   layout: "centered"
 });
@@ -49,7 +49,9 @@ const form = ref<RegisterPayload>({
 });
 
 async function register(payload: RegisterPayload) {
-  axios.get("/users")
+ const res = await axios.post('/api/register', payload)
+ console.log(res);
+ 
 }
 </script>
 

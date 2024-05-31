@@ -5,6 +5,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     axios.defaults.baseURL = useRuntimeConfig().public.apiUrl;
     axios.defaults.headers.common['Content-type'] = "application/json"; // on envoie du json au serve
     axios.defaults.headers.common['Accept'] = "application/json"; // on accepte du json du serve
+    axios.defaults.headers.common['X-Requested-With'] = "XMLHttpRequest";
     axios.defaults.withCredentials = true;
     axios.defaults.withXSRFToken = true;
 
