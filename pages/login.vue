@@ -1,16 +1,16 @@
 <template>
   <div class="prose">
     <h1>Connexion</h1>
-    <form action="">
+    <form @submit.prevent="login(form)">
       <label>
         Email
-        <input type="email">
+        <input type="email" v-model="form.email">
       </label>
       <label>
         Mot de passe
-        <input type="password">
+        <input type="password" v-model="form.password">
       </label>
-      <button type="button" class="btn">S'inscrire'</button>
+      <button type="submit" class="btn">S'inscrire'</button>
     </form>
     <p>
       Pas de compte ?
@@ -20,9 +20,30 @@
 </template>
 
 <script lang="ts" setup>
+import axios from 'axios';
+
   definePageMeta({
     layout: "centered"
   });
+
+  interface LoginPayload {
+
+  email: string;
+  password: string;
+
+};
+
+const form = ref<LoginPayload>({
+
+  email: "",
+  password: "",
+
+});
+
+async function register(payload: LoginPayload) {
+ await axios.post('/login', payload)
+ 
+}
 </script>
 
 <style></style>
