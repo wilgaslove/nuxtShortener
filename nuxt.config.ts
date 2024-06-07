@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     }
   }, 
   formkit: {
-    configFile: ""
+    configFile: "~/formkit.config.ts",
+    autoImport: true,
   }
 })

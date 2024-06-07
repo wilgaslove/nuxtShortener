@@ -1,2 +1,7 @@
-import {} from '@formkit/nuxt';
-export default defaultConfig()
+
+import {fr} from '@formkit/i18n';
+import {defineFormKitConfig} from '@formkit/vue';
+export default defineFormKitConfig({
+    locales: {},
+    locale: "fr",
+})

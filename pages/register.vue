@@ -3,7 +3,7 @@
     <h1>Inscription</h1>
 
 
-    <FormKit type="form" submit-label="s'inscrire" >
+    <FormKit type="form" submit-label="s'inscrire" @submit.prevent="register(form)">
     <FormKit name="name" label="Nom et prenom" type="text" placeholder="John Doe"/>
     <FormKit name="email" label="Email" type="email"  validation="required|email" placeholder="jdoe@exemple.com"/>
     <FormKit name="password" label="Mot de passe" type="password" validation="required"  placeholder="Votre mot de passe"/>

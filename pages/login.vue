@@ -1,13 +1,13 @@
 <template>
   <div class="prose">
     <h1>Connexion</h1>
-    
-    <FormKit type="form">
-      <FormKit type="email" label="Email" nema="email" />
-      <FormKit type="password" label="mot de passe" name="password"/>
+
+    <FormKit type="form" submit-label="Se connecter" :submit-attrs="{inutCass: 'btn'}" default="{value}">
+      <FormKit type="email" label="Email" nema="email"  placeholder="Votre adresse email"/>
+      <FormKit type="password" label="mot de passe" name="password" placeholder="Votre mot de passe"/>
     </FormKit>
 
-    <p>
+    <p class="text-red-600">
       Pas de compte ?
       <NuxtLink class="uderline text-lime-600" to="/login">connectez-vous !</NuxtLink>
     </p>
