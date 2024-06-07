@@ -1,7 +1,7 @@
 <template>
   <div class="prose">
     <h1>Connexion</h1>
-    <form @submit.prevent="login(form)">
+    <!-- <form @submit.prevent="login(form)">
       <label>
         Email
         <input type="email" v-model="form.email">
@@ -11,7 +11,13 @@
         <input type="password" v-model="form.password">
       </label>
       <button type="submit" class="btn">S'inscrire'</button>
-    </form>
+    </form> -->
+
+    <FormKit type="form">
+      <FormKit type="email" label="Email" nema="email" />
+      <FormKit type="password" label="mot de passe" name="password"/>
+    </FormKit>
+
     <p>
       Pas de compte ?
       <NuxtLink class="uderline text-lime-600" to="/login">connectez-vous !</NuxtLink>
