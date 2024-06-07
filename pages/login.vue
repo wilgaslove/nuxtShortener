@@ -1,18 +1,7 @@
 <template>
   <div class="prose">
     <h1>Connexion</h1>
-    <!-- <form @submit.prevent="login(form)">
-      <label>
-        Email
-        <input type="email" v-model="form.email">
-      </label>
-      <label>
-        Mot de passe
-        <input type="password" v-model="form.password">
-      </label>
-      <button type="submit" class="btn">S'inscrire'</button>
-    </form> -->
-
+    
     <FormKit type="form">
       <FormKit type="email" label="Email" nema="email" />
       <FormKit type="password" label="mot de passe" name="password"/>
@@ -46,8 +35,9 @@ const form = ref<LoginPayload>({
 
 });
 
-async function register(payload: LoginPayload) {
- await axios.post('/login', payload)
+async function login(payload: LoginPayload) {
+ await axios.post('/login', payload);
+// useRoute().push("/me")
  
 }
 </script>

@@ -1,25 +1,15 @@
 <template>
   <div class="prose">
     <h1>Inscription</h1>
-    <form @submit.prevent="register(form)">
-      <label>
-        Nom et prénom
-        <input type="text" v-model="form.name">
-      </label>
-      <label>
-        Email
-        <input type="email" v-model="form.email">
-      </label>
-      <label>
-        Mot de passe
-        <input type="password" v-model="form.password">
-      </label>
-      <label>
-        Confirmation Mot de passe
-        <input type="password" v-model="form.password_confirmation">
-      </label>
-      <button type="submit" class="btn">S'inscrire'</button>
-    </form>
+
+
+    <FormKit type="form" submit-label="s'inscrire" >
+    <FormKit name="name" label="Nom et prenom" type="text" placeholder="John Doe"/>
+    <FormKit name="email" label="Email" type="email"  validation="required|email" placeholder="jdoe@exemple.com"/>
+    <FormKit name="password" label="Mot de passe" type="password" validation="required"  placeholder="Votre mot de passe"/>
+    <FormKit name="password_confirmation" label="Confirmation mot de passe" type="password" validation="required|confirm:password"  placeholder="Confirmez votre mot de passe"/>
+    </FormKit>
+
     <p>
       Vous avez déjà un compte ?
       <NuxtLink class="uderline text-lime-600" to="/login">connectez-vous!</NuxtLink>
