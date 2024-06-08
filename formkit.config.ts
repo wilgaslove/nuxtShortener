@@ -4,4 +4,5 @@ import {defineFormKitConfig} from '@formkit/vue';
 export default defineFormKitConfig({
     locales: {},
     locale: "fr",
+    //config
 })

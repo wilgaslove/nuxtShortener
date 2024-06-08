@@ -3,7 +3,7 @@
     <h1>Inscription</h1>
 
 
-    <FormKit type="form" submit-label="s'inscrire" @submit.prevent="register(form)">
+    <FormKit type="form" submit-label="s'inscrire" :submit.attrs="register" >
     <FormKit name="name" label="Nom et prenom" type="text" placeholder="John Doe"/>
     <FormKit name="email" label="Email" type="email"  validation="required|email" placeholder="jdoe@exemple.com"/>
     <FormKit name="password" label="Mot de passe" type="password" validation="required"  placeholder="Votre mot de passe"/>
@@ -39,13 +39,19 @@ const form = ref<RegisterPayload>({
 });
 
 async function register(payload: RegisterPayload) {
-await axios.post('/register', payload)
+try {
+  await axios.post('/register', payload)
 await axios.post('/login', {
-  email:payload.email,
+  email: payload.email,
   password:payload.password
 });
+
 useRouter().push("/me");
  
+} catch (error) {
+  console.log("une erreur est survenue");
+  
+}
  
 }
 </script>
