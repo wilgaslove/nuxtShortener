@@ -11,7 +11,10 @@ export default defineNuxtConfig({
     }
   }, 
   formkit: {
-    configFile: "~/formkit.config.ts",
+    // configFile: "~/formkit.config.ts",
     autoImport: true,
+  },
+  i18n: {
+    defaultLocale: 'fr'
   }
 })

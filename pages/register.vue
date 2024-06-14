@@ -6,7 +6,9 @@
     <FormKit 
     type="form" 
     submit-label="s'inscrire" 
-    :submit-attrs="{inputClass: 'btn'}" #default="{value}" @submit="register">
+    :submit-attrs="{inputClass: 'btn'}" 
+    #default="{value}" 
+    @submit="register">
     <FormKit 
     name="name" 
     label="Nom et prenom" 
@@ -40,7 +42,7 @@
 </template>
 
 <script lang="ts" setup>
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 definePageMeta({
   layout: "centered"
@@ -60,22 +62,33 @@ const form = ref<RegisterPayload>({
   password_confirmation: "",
 });
 
-async function register(payload: RegisterPayload) {
-  console.log(payload);
-  
-// try {
-//   await axios.post('/register', payload)
-// await axios.post('/login', {
-//   email: payload.email,
-//   password:payload.password
-// });
+async function register(payload: RegisterPayload, node: FormKitNode) {
 
-// useRouter().push("/me");
- 
-// } catch (error) {
-//   console.log("une erreur est survenue");
+  try {
+    console.log(payload);
+    await axios.post('/register', payload)
+    await axios.post('/login', {
+    email: payload.email,
+    password:payload.password
+    });
+    
+    useRouter().push("/me");
+
+  } catch(err) { if (err instanceof AxiosError) {
+    node.setErrors(
+      //messages d'erreus-globales
+      ['Une erreur est survnue. Verilez reessayer'],
+      //les erreurs liés aux champs de saisie
+     err.response?.data);
+  } 
+    console.log("une erreur est survenue");
+    
+  }
   
-// }
+ 
+   
+
+
  
 }
 </script>

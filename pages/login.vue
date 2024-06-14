@@ -57,4 +57,8 @@ async function login(payload: LoginPayload) {
 }
 </script>
 
-<style></style>
+<style>
+.formkit-form {
+  @apply space-y-4;
+}
+</style>
