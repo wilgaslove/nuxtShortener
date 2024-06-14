@@ -11,7 +11,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     axios.defaults.withXSRFToken = true;
 
     // on lance des requêtes pour avoir les cookies nous permettant d'interagir avec le backend
-    await axios.get("/sanctum/csrf-cookie", {
-        baseURL: config.public.apiUrl
-    });
+    // await axios.get("/sanctum/csrf-cookie", {
+    //     baseURL: config.public.apiUrl
+    // });
 })
