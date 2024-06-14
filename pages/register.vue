@@ -6,12 +6,12 @@
     <FormKit 
     type="form" 
     submit-label="s'inscrire" 
-    :submit.attrs="register" >
+    :submit-attrs="{inputClass: 'btn'}" #default="{value}" @submit="register">
     <FormKit 
     name="name" 
     label="Nom et prenom" 
     type="text" 
-    placeholder="John Doe"/>
+    placeholder="Wilgas HOUNFONADAN"/>
     <FormKit 
     name="email" 
     label="Email" 
@@ -20,7 +20,7 @@
     placeholder="jdoe@exemple.com"/>
     <FormKit 
     name="password" 
-    label="Mot de passe" 
+    label="Votre Mot de Passe" 
     type="password" 
     validation="required"  
     placeholder="Votre mot de passe"/>
@@ -30,6 +30,7 @@
     type="password" 
     validation="required|confirm:password"  
     placeholder="Confirmez votre mot de passe"/>
+    <pre>{{ value }}</pre>
     </FormKit>
 
     <p>
@@ -61,21 +62,27 @@ const form = ref<RegisterPayload>({
 });
 
 async function register(payload: RegisterPayload) {
-try {
-  await axios.post('/register', payload)
-await axios.post('/login', {
-  email: payload.email,
-  password:payload.password
-});
-
-useRouter().push("/me");
- 
-} catch (error) {
-  console.log("une erreur est survenue");
+  console.log(payload);
   
-}
+// try {
+//   await axios.post('/register', payload)
+// await axios.post('/login', {
+//   email: payload.email,
+//   password:payload.password
+// });
+
+// useRouter().push("/me");
+ 
+// } catch (error) {
+//   console.log("une erreur est survenue");
+  
+// }
  
 }
 </script>
 
-<style></style>
+<style>
+.formkit-form {
+  @apply space-y-4;
+}
+</style>
