@@ -18,7 +18,8 @@
 import axios from 'axios';
 
   definePageMeta({
-    layout: "centered"
+    layout: "centered",
+    middleware: ["guest"]
   });
 
   interface LoginPayload {
