@@ -30,7 +30,6 @@
     type="password" 
     validation="required|confirm:password"  
     placeholder="Confirmez votre mot de passe"/>
-    <pre>{{ value }}</pre>
     </FormKit>
 
     <p>

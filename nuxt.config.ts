@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "@formkit/nuxt"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "@formkit/nuxt", "@nuxtjs/i18n"],
   runtimeConfig: {
     public: {
       appUrl: process.env.APP_URL || "http://localhost:3000",
