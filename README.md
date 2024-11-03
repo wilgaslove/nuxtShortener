@@ -58,8 +58,7 @@ Locally preview production build:
 # npm
 npm run preview
 
-# pnpm
-pnpm run preview
+# pnp
 
 
 
