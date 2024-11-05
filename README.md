@@ -56,9 +56,6 @@ Locally preview production build:
 # npm
 npm run preview
 
-# pnp
-
-
 
 # bun
 bun run preview
