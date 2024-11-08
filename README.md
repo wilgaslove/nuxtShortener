@@ -42,8 +42,6 @@ npm run build
 
 # pnpm
 
-
-
 # bun
 bun run build
 ```
@@ -59,4 +57,4 @@ npm run preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information
