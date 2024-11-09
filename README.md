@@ -10,9 +10,6 @@ Make sure to install the dependencies:
 # npm
 npm install
 
-
-
-
 # bun
 bun install
 ```
@@ -24,9 +21,6 @@ Start the development server on `http://localhost:3000`:
 ```bash
 # npm
 npm run dev
-
-
-
 
 # bun
 bun run dev
